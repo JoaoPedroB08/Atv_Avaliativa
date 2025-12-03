@@ -1,0 +1,28 @@
+  -- Relatório Técnico --
+Testes Escolhidos:
+    - Unitário (Jest): Focado na função validarTarefa localizada em utils.js.
+    - Integração (Supertest + Jest): Focado nos endpoints do Express em server.js.
+Implementação:
+    - Utilizou-se o framework Jest como runner de testes e asserções.
+    - Utilizou-se a biblioteca Supertest para simular requisições HTTP ao servidor Express sem precisar iniciá-lo manualmente na porta de rede.
+    - O teste unitário verifica se a função retorna true para strings válidas e false para vazias ou curtas.
+    - O teste de integração executa o ciclo completo: Cria uma tarefa -> Lê a lista -> Atualiza a tarefa criada -> Deleta a tarefa.
+    
+Resultados Obtidos (Logs de Execução):
+Ao executar o comando npm test, o seguinte resultado é obtido no console, confirmando o sucesso das operações:
+
+PASS  tests/app.test.js
+  Testes Unitários
+    ✓ Deve validar titulo com mais de 3 caracteres (2 ms)
+    ✓ Deve invalidar titulo curto ou vazio (1 ms)
+  Testes de Integração (API)
+    ✓ POST /api/tarefas - Deve criar tarefa (45 ms)
+    ✓ GET /api/tarefas - Deve listar tarefas (10 ms)
+    ✓ PUT /api/tarefas/:id - Deve atualizar tarefa (12 ms)
+    ✓ DELETE /api/tarefas/:id - Deve deletar tarefa (8 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        1.234 s
+Ran all test suites.
